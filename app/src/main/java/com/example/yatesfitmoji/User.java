@@ -14,6 +14,14 @@ public class User {
     @ColumnInfo(name = "name")
     private String name;
 
+    @NonNull
+    @ColumnInfo(name = "age")
+    private int age;
+
+    @NonNull
+    @ColumnInfo(name = "sex")
+    private int sex;
+
 
     @ColumnInfo(name = "startingWeight")
     private float startingWeight;
@@ -41,6 +49,24 @@ public class User {
     @NonNull
     public String getName(){
         return name;
+    }
+
+    @NonNull
+    public int getAge() {
+        return age;
+    }
+
+    @NonNull
+    public int getSex() {
+        return sex;
+    }
+
+    public void setAge(@NonNull int age) {
+        this.age = age;
+    }
+
+    public void setSex(@NonNull int sex) {
+        this.sex = sex;
     }
 
     public float getStartingWeight(){

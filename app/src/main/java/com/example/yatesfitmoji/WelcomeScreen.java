@@ -22,8 +22,8 @@ public class WelcomeScreen extends AppCompatActivity {
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMainActivity(v);
-                //openUserInfoName(v);
+                //openMainActivity(v);
+                openUserInfoName(v);
             }
         });
     }

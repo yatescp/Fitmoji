@@ -5,6 +5,7 @@
     <string name="textOk">Ok</string>
     <string name="textContinue">Continue</string>
     <string name="textNameQuestion">What is your name?</string>
+    <string name="textAgeQuestion">What is your age?</string>
     <string name="textReasonQuestion">Why are you using Fitmoji?</string>
     <string name="textWeightLoss">To lose weight</string>
     <string name="textWeightGain">To gain weight</string>

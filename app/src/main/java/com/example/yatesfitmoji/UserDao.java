@@ -18,6 +18,12 @@ public interface UserDao {
     @Query("SELECT * FROM Users WHERE name = :nameKey LIMIT 1")
     LiveData<User> getUser(String nameKey);
 
+//    @Query("SELECT * FROM Users WHERE name = :ageKey LIMIT 1")
+//    LiveData<User> getAge(String ageKey);
+//
+//    @Query("SELECT * FROM Users WHERE name = :sexKey LIMIT 1")
+//    LiveData<User> getSex(String sexKey);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User user);
 
