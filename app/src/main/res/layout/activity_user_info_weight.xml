@@ -8,18 +8,14 @@
 
     <TextView
         android:id="@+id/textWeight"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginTop="196dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:gravity="center"
         android:text="@string/textWeight"
         android:textSize="18sp"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,25 +26,21 @@
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:inputType="number"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textWeight" />
 
     <TextView
         android:id="@+id/textGoal"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:gravity="center"
         android:text="@string/textGoal"
         android:textSize="18sp"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weightInput" />
 
@@ -59,17 +51,19 @@
         android:layout_marginTop="24dp"
         android:gravity="center_horizontal"
         android:inputType="number"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textGoal" />
 
     <Button
+        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/buttonContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/textContinue"
-        android:textAllCaps="false"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goalInput" />

@@ -27,7 +27,7 @@ public class UserInfoName extends AppCompatActivity {
         setContentView(R.layout.activity_user_info_name);
 
         next = findViewById(R.id.buttonContinue);
-        nameInput = findViewById(R.id.goalInput);
+        nameInput = findViewById(R.id.nameInput);
         ageInput= findViewById(R.id.ageInputId);
         maleBtn = findViewById(R.id.maleButton1);
         femaleBtn = findViewById(R.id.femaleButton2);

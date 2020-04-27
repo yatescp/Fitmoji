@@ -3,9 +3,13 @@
     <string name="textWelcome">Welcome to Fitmoji!</string>
     <string name="textWelcomeDesc">We just have a few questions for you before we get started</string>
     <string name="textOk">Ok</string>
+
     <string name="textContinue">Continue</string>
     <string name="textNameQuestion">What is your name?</string>
     <string name="textAgeQuestion">What is your age?</string>
+    <string name="genderMale">Male</string>
+    <string name="genderFemale">Female</string>
+
     <string name="textReasonQuestion">Why are you using Fitmoji?</string>
     <string name="textWeightLoss">To lose weight</string>
     <string name="textWeightGain">To gain weight</string>
