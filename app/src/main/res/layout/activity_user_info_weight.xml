@@ -10,26 +10,43 @@
         android:id="@+id/textWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="126dp"
         android:gravity="center"
         android:text="@string/textWeight"
         android:textSize="18sp"
+        android:textColor="@color/textColor"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/weightInput"
-        android:layout_width="256sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        android:inputType="number"
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/weightLayout"
+        android:layout_marginTop="12dp"
+        android:hint="Weight"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/colorAccent"
+
+
+
+
+        app:layout_constraintTop_toBottomOf="@+id/textWeight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textWeight" />
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textGoal"
@@ -39,22 +56,39 @@
         android:gravity="center"
         android:text="@string/textGoal"
         android:textSize="18sp"
+        android:textColor="@color/textColor"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weightInput" />
+        app:layout_constraintTop_toBottomOf="@+id/weightLayout" />
 
-    <EditText
-        android:id="@+id/goalInput"
-        android:layout_width="256sp"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="center_horizontal"
-        android:inputType="number"
+        android:id="@+id/goalLayout"
+        android:layout_marginTop="12dp"
+        android:hint="Goal"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/colorAccent"
 
+
+
+
+        app:layout_constraintTop_toBottomOf="@+id/textGoal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textGoal" />
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         style="@style/Widget.AppCompat.Button.Colored"
@@ -66,6 +100,6 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goalInput" />
+        app:layout_constraintTop_toBottomOf="@+id/goalLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
