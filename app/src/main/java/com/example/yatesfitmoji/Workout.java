@@ -1,18 +1,22 @@
 package com.example.yatesfitmoji;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
-import androidx.annotation.NonNull;
-import com.example.yatesfitmoji.User;
 
 @Entity(tableName = "Workouts")
 
 public class Workout {
     @NonNull
     @PrimaryKey
+    @ColumnInfo(name = "name")
     private String name;
+
+    @NonNull
+    @PrimaryKey
+    @ColumnInfo(name = "date")
+    private String date;
 
     @NonNull
     @ColumnInfo(name = "pushups")
@@ -26,8 +30,9 @@ public class Workout {
     @ColumnInfo(name = "plank")
     private int plank;
 
-    public Workout(@NonNull String name, @NonNull int pushups, @NonNull int crunches, @NonNull int plankTime){
+    public Workout(@NonNull String name, @NonNull int pushups, @NonNull int crunches, @NonNull int plank, @NonNull String date){
         this.name = name;
+        this.date = date;
         this.crunches = crunches;
         this.pushups = pushups;
         this.plank = plank;
@@ -41,11 +46,17 @@ public class Workout {
 
     @NonNull public int getPlank(){return plank;}
 
+    @NonNull public String getDate(){return date;}
+
+    public void setName(@NonNull String name){this.name = name;}
+
     public void setPushups(@NonNull int pushups){this.pushups = pushups;}
 
     public void setCrunches(@NonNull int crunches){this.crunches = crunches;}
 
     public void setPlank(@NonNull int plank){this.plank = plank;}
+
+    public void setDate(@NonNull String date){this.date = date;}
 
 
 }
