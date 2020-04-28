@@ -13,6 +13,7 @@ import android.widget.Toast;
 public class UserInfoWeight extends AppCompatActivity {
 
     EditText weight, goal;
+    com.google.android.material.textfield.TextInputLayout weightLayout, goalLayout;
 
     Button next;
 
@@ -21,15 +22,23 @@ public class UserInfoWeight extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info_weight);
 
-        weight = findViewById(R.id.weightInput);
-        goal = findViewById(R.id.goalInput);
+        weightLayout =findViewById(R.id.weightLayout);
+        weight = new EditText(getApplicationContext());
+
+        goalLayout = findViewById(R.id.goalLayout);
+        goal = new EditText(getApplicationContext());
 
         next = findViewById(R.id.buttonContinue);
 
+        loadWeight();
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Material design workaround
+                weight.setText(weightLayout.getEditText().getText().toString());
+                goal.setText(goalLayout.getEditText().getText().toString());
+
                 if (goal.getText().length() == 0.0f || weight.getText().length() == 0.0f){
                     Toast toast = Toast.makeText(getApplicationContext(), "Please enter your Current Weight and Goal Weight", Toast.LENGTH_LONG);
                     toast.show();
@@ -39,13 +48,13 @@ public class UserInfoWeight extends AppCompatActivity {
                 float goalFloat = Float.parseFloat(goal.getText().toString());
                 float weightFloat = Float.parseFloat(weight.getText().toString());
 
-                if (weightFloat < 50.0f || weightFloat > 500.0f){
+                if (weightFloat < 50.0f || weightFloat > 700.0f){
                     Toast toast = Toast.makeText(getApplicationContext(), "Please enter your real weight", Toast.LENGTH_LONG);
                     toast.show();
                     return;
                 }
 
-                if (goalFloat < 50.0f || goalFloat > 500.0f){
+                if (goalFloat < 50.0f || goalFloat > 700.0f){
                     Toast toast = Toast.makeText(getApplicationContext(), "Please enter your real goal weight", Toast.LENGTH_LONG);
                     toast.show();
                     return;
@@ -61,6 +70,23 @@ public class UserInfoWeight extends AppCompatActivity {
         });
 
     }
+
+    protected void loadWeight(){
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedPref",MODE_PRIVATE);
+
+        String temp = sharedPreferences.getString("userWeight","");
+        if(!temp.equals("")){
+            weightLayout.getEditText().setText(String.valueOf(temp));
+        }
+        temp = sharedPreferences.getString("userGoal","");
+        if(!temp.equals("")){
+            goalLayout.getEditText().setText(String.valueOf(temp));
+        }
+
+
+    }
+
+
 
     public void openUserInfoFinished(View view){
         Intent intent = new Intent (this, MainActivity.class);

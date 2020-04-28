@@ -117,6 +117,13 @@ public class UserInfoName extends AppCompatActivity {
         nameInput.setText(name);
         ageInput.setText(String.valueOf(age));
 
+        nameLayout.getEditText().setText(name);
+        if(age!= 0){
+            ageLayout.getEditText().setText(String.valueOf(age));
+        }
+
+
+
         if(sex == 1) {
             femaleBtn.setChecked(false);
             maleBtn.setChecked(true);
