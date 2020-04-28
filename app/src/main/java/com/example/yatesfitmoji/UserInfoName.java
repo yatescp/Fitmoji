@@ -9,12 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class UserInfoName extends AppCompatActivity {
 
     EditText nameInput, ageInput;
     Button next;
     RadioButton maleBtn, femaleBtn;
+
+    com.google.android.material.textfield.TextInputLayout nameLayout;
+    com.google.android.material.textfield.TextInputLayout ageLayout;
 
     String name;
     int age, sex;
@@ -27,10 +31,17 @@ public class UserInfoName extends AppCompatActivity {
         setContentView(R.layout.activity_user_info_name);
 
         next = findViewById(R.id.buttonContinue);
-        nameInput = findViewById(R.id.nameInput);
-        ageInput= findViewById(R.id.ageInputId);
         maleBtn = findViewById(R.id.maleButton1);
         femaleBtn = findViewById(R.id.femaleButton2);
+
+
+        //material design update workaround
+        nameLayout=findViewById(R.id.nameLayout);
+        nameInput = new EditText(getApplicationContext());
+
+        ageInput = new EditText(getApplicationContext());
+        ageLayout=findViewById(R.id.ageLayout);
+
 
         loadName();
         updateName();
@@ -53,12 +64,26 @@ public class UserInfoName extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name = nameInput.getText().toString();
-                age = Integer.parseInt(ageInput.getText().toString());
-                saveName();
-                openUserReason(v);
+                //makes sure the entry fields are not empty
+                if(nameLayout.getEditText().getText().toString().length( )== 0 || ageLayout.getEditText().getText().toString().length()==0){
+                    Toast toast = Toast.makeText(getApplicationContext(), "please fill out both boxes", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+                else {
+                    //workaround to not have to rewrite multiple lines of code while keeping new material design
+                    nameInput.setText(nameLayout.getEditText().getText().toString());
+                    ageInput.setText(ageLayout.getEditText().getText().toString());
+
+                    //saves data and prepares for the next screen
+                    name = nameInput.getText().toString();
+                    age = Integer.parseInt(ageInput.getText().toString());
+                    saveName();
+                    openUserReason(v);
+                }
             }
         });
+
+
     }
 
     public void finish(){
