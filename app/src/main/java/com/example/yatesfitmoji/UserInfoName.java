@@ -77,8 +77,14 @@ public class UserInfoName extends AppCompatActivity {
                     //saves data and prepares for the next screen
                     name = nameInput.getText().toString();
                     age = Integer.parseInt(ageInput.getText().toString());
-                    saveName();
-                    openUserReason(v);
+                    if(age<13) {
+                        Toast toast = Toast.makeText(getApplicationContext(), "You must be 13 years or older", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                    else {
+                        saveName();
+                        openUserReason(v);
+                    }
                 }
             }
         });
@@ -120,17 +126,16 @@ public class UserInfoName extends AppCompatActivity {
         nameLayout.getEditText().setText(name);
         if(age!= 0){
             ageLayout.getEditText().setText(String.valueOf(age));
+            if(sex == 1) {
+                femaleBtn.setChecked(false);
+                maleBtn.setChecked(true);
+            } else {
+                maleBtn.setChecked(false);
+                femaleBtn.setChecked(true);
+            }
         }
 
 
-
-        if(sex == 1) {
-            femaleBtn.setChecked(false);
-            maleBtn.setChecked(true);
-        } else {
-            maleBtn.setChecked(false);
-            femaleBtn.setChecked(true);
-        }
     }
 
     public void openUserReason(View view){

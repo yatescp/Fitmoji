@@ -83,7 +83,6 @@ public class UserInfoWeight extends AppCompatActivity {
             goalLayout.getEditText().setText(String.valueOf(temp));
         }
 
-
     }
 
 

@@ -8,7 +8,7 @@
     <string name="textNameQuestion">What is your name?</string>
     <string name="nameHint">Name</string>
     <string name="ageHint">Age</string>
-    <string name="textAgeQuestion">What is your age?</string>
+    <string name="textAgeQuestion">How old are you?</string>
     <string name="genderMale">Male</string>
     <string name="genderFemale">Female</string>
 
@@ -17,5 +17,5 @@
     <string name="textWeightGain">To gain weight</string>
     <string name="textStayInShape">To stay in shape</string>
     <string name="textWeight">How much do you weigh in pounds?</string>
-    <string name="textGoal">How much do you want to weigh in pounds?</string>
+    <string name="textGoal">What is your goal weight in pounds?</string>
 </resources>
