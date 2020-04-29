@@ -64,6 +64,7 @@ public class UserInfoWeight extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences("sharedPref", MODE_PRIVATE);
                 sharedPreferences.edit().putString("userWeight", weight.getText().toString()).apply();
                 sharedPreferences.edit().putString("userGoal", goal.getText().toString()).apply();
+                sharedPreferences.edit().putBoolean("setupFinished", true).apply();
 
                 openUserInfoFinished(v);
             }

@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.SharedPreferences;
 
 import androidx.lifecycle.LiveData;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class FitmojiRepository {
@@ -36,5 +38,9 @@ public class FitmojiRepository {
 
     LiveData<User> getUserByName(String name){
         return userDao.getUser(name);
+    }
+
+    public List<User> findUsersByName(String name){
+        return userDao.findUsersByName(name);
     }
 }

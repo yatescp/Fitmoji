@@ -2,6 +2,7 @@
     <string name="app_name">Fitmoji</string>
     <string name="textWelcome">Welcome to Fitmoji!</string>
     <string name="textWelcomeDesc">We just have a few questions for you before we get started</string>
+    <string name="textReturningUser">Click ok to continue to your Fitmoji account</string>
     <string name="textOk">Ok</string>
 
     <string name="textContinue">Continue</string>

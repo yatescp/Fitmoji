@@ -7,12 +7,13 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Dao
 public interface UserDao {
 
-    @Query("SELECT * from Users")
+    @Query("SELECT * FROM Users")
     LiveData<List<User>> getAllUsers();
 
     @Query("SELECT * FROM Users WHERE name = :nameKey LIMIT 1")
@@ -22,7 +23,12 @@ public interface UserDao {
 //    LiveData<User> getAge(String ageKey);
 //
 //    @Query("SELECT * FROM Users WHERE name = :sexKey LIMIT 1")
-//    LiveData<User> getSex(String sexKey);
+
+    //For populating log in search list
+    @Query("SELECT * FROM Users WHERE name LIKE :search")
+    List<User> findUsersByName(String search);
+
+    //    LiveData<User> getSex(String sexKey);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User user);
