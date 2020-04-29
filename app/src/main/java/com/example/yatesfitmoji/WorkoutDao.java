@@ -17,14 +17,14 @@ public interface WorkoutDao {
     @Query("SELECT * FROM Workouts WHERE name = :nameKey LIMIT 1")
     LiveData<Workout> getWorkout(String nameKey);
 
-//    @Query("SELECT pushups FROM Workouts WHERE name = :nameKey LIMIT 1")
-//    LiveData<Workout> getPushups(String nameKey);
-//
-//    @Query("SELECT crunches FROM Workouts WHERE name = :nameKey LIMIT 1")
-//    LiveData<Workout> getCrunches(String nameKey);
-//
-//    @Query("SELECT plank FROM Workouts WHERE name = :nameKey LIMIT 1")
-//    LiveData<Workout> getPlanks(String nameKey);
+    @Query("SELECT pushups FROM Workouts WHERE name = :nameKey LIMIT 1")
+    LiveData<Workout> getPushups(String nameKey);
+
+    @Query("SELECT crunches FROM Workouts WHERE name = :nameKey LIMIT 1")
+    LiveData<Workout> getCrunches(String nameKey);
+
+    @Query("SELECT plank FROM Workouts WHERE name = :nameKey LIMIT 1")
+    LiveData<Workout> getPlanks(String nameKey);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Workout workout);
