@@ -14,8 +14,6 @@ public class UserInfoReason extends AppCompatActivity {
 
     RadioButton gain, lose, stay;
 
-    Button next;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

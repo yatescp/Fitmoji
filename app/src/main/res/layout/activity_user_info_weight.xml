@@ -6,100 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".WelcomeScreen">
 
+
     <TextView
-        android:id="@+id/textWeight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="126dp"
+        android:id="@+id/weightLabel"
+        android:layout_width="317dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="104dp"
         android:gravity="center"
         android:text="@string/textWeight"
-        android:textSize="18sp"
         android:textColor="@color/textColor"
 
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <com.google.android.material.textfield.TextInputLayout
+    <com.google.android.material.textfield.TextInputEditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:id="@+id/weightLayout"
+        android:id="@+id/weightInput"
         android:layout_marginTop="12dp"
-        android:hint="Weight"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:boxStrokeColor="@color/colorAccent"
-
-
-
-
-        app:layout_constraintTop_toBottomOf="@+id/textWeight"
+        app:layout_constraintTop_toBottomOf="@+id/weightLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+    </com.google.android.material.textfield.TextInputEditText>
 
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="3"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textGoal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:id="@+id/heightLabel"
+        android:layout_width="272dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="28dp"
         android:gravity="center"
-        android:text="@string/textGoal"
-        android:textSize="18sp"
+        android:text="@string/height"
         android:textColor="@color/textColor"
+        android:textSize="18sp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weightLayout" />
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/goalLayout"
-        android:layout_marginTop="12dp"
-        android:hint="Goal"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="@color/colorAccent"
-
-
-
-
-        app:layout_constraintTop_toBottomOf="@+id/textGoal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="3"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/weightInput" />
 
     <Button
-        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/buttonContinue"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="160dp"
         android:text="@string/textContinue"
-
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goalLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/heightInput"
+        app:layout_constraintVertical_bias="0.271" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/heightInput"
+        android:layout_width="204dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="28dp"
+        android:inputType="number"
+        android:maxLength="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

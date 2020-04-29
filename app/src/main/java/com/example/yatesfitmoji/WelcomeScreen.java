@@ -36,8 +36,13 @@ public class WelcomeScreen extends AppCompatActivity {
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sharedPreferences.getBoolean("setupFinished", false)) openMainActivity(v);
-                else openUserInfoName(v);
+               // if (sharedPreferences.getBoolean("setupFinished", false)) {
+                //    openMainActivity(v);
+                //}
+
+               // else {
+                    openUserInfoName(v);
+               // }
             }
         });
     }

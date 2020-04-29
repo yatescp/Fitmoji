@@ -17,6 +17,13 @@
     <string name="textWeightLoss">To lose weight</string>
     <string name="textWeightGain">To gain weight</string>
     <string name="textStayInShape">To stay in shape</string>
-    <string name="textWeight">How much do you weigh in pounds?</string>
-    <string name="textGoal">What is your goal weight in pounds?</string>
+    <string name="textWeight">How much do you weight in pounds?</string>
+    <string name="height">What is your height in inches?</string>
+
+
+    <string name="textActivityLevel">Select Your Activity Level</string>
+    <string name="textActivityLight">Light</string>
+    <string name="textActivityModerate">Moderate</string>
+    <string name="textActivityActive">Active</string>
+    <string name="textActivityVeryActive">Very Active</string>
 </resources>
