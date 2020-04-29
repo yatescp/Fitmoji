@@ -30,7 +30,7 @@ public class WelcomeScreen extends AppCompatActivity {
         welcomeMsg = findViewById(R.id.textWelcome);
 
         if (sharedPreferences.getBoolean("setupFinished", false)){
-            welcomeMsg.setText("Welcome back to Fitmoji " + sharedPreferences.getString("userName", ""));
+            welcomeMsg.setText("Welcome back to Fitmoji, " + sharedPreferences.getString("userName", ""));
             welcomeInfo.setText(R.string.textReturningUser);
         }
         ok.setOnClickListener(new View.OnClickListener() {
