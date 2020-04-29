@@ -17,7 +17,9 @@
     <string name="textWeightLoss">To lose weight</string>
     <string name="textWeightGain">To gain weight</string>
     <string name="textStayInShape">To stay in shape</string>
-    <string name="textWeight">How much do you weight in pounds?</string>
+    <string name="textWeight">How much do you weigh in pounds?</string>
+    <string name="weightHint">Weight</string>
+    <string name="heightHint">Height</string>
     <string name="height">What is your height in inches?</string>
 
 

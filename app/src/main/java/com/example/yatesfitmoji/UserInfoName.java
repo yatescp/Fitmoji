@@ -66,7 +66,7 @@ public class UserInfoName extends AppCompatActivity {
             public void onClick(View v) {
                 //makes sure the entry fields are not empty
                 if(nameLayout.getEditText().getText().toString().length( )== 0 || ageLayout.getEditText().getText().toString().length()==0){
-                    Toast toast = Toast.makeText(getApplicationContext(), "please fill out both boxes", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(), "please fill out all information", Toast.LENGTH_LONG);
                     toast.show();
                 }
                 else {

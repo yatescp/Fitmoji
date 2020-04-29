@@ -21,17 +21,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputEditText
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:id="@+id/weightInput"
+        android:id="@+id/weightLayout"
         android:layout_marginTop="12dp"
+        android:hint="@string/weightHint"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:boxStrokeColor="@color/colorAccent"
+
+
         app:layout_constraintTop_toBottomOf="@+id/weightLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-    </com.google.android.material.textfield.TextInputEditText>
 
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            android:singleLine="true"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/heightLabel"
@@ -45,7 +58,31 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weightInput" />
+        app:layout_constraintTop_toBottomOf="@+id/weightLayout" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/heightLayout"
+        android:layout_marginTop="12dp"
+        android:hint="@string/heightHint"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/colorAccent"
+
+        app:layout_constraintTop_toBottomOf="@+id/heightLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            android:singleLine="true"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonContinue"
@@ -57,19 +94,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightInput"
+        app:layout_constraintTop_toBottomOf="@+id/heightLayout"
         app:layout_constraintVertical_bias="0.271" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/heightInput"
-        android:layout_width="204dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="28dp"
-        android:inputType="number"
-        android:maxLength="3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

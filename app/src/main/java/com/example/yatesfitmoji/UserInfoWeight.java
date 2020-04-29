@@ -7,16 +7,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class UserInfoWeight extends AppCompatActivity {
 
-    TextView weight, height;
+    EditText weight, height;
 
-
-
-    com.google.android.material.textfield.TextInputEditText weightLayoutInput, heightLayoutInput;
+    com.google.android.material.textfield.TextInputLayout weightLayout, heightLayout;
 
     Button next;
 
@@ -25,11 +23,11 @@ public class UserInfoWeight extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info_weight);
 
-        weightLayoutInput = findViewById(R.id.weightInput);
-        weight = findViewById(R.id.weightLabel);//new EditText(getApplicationContext());
+        weightLayout = findViewById(R.id.weightLayout);
+        weight = new EditText(getApplicationContext());
 
-        heightLayoutInput = findViewById(R.id.heightInput);
-        height = findViewById(R.id.heightLabel);//new EditText(getApplicationContext());
+        heightLayout = findViewById(R.id.heightLayout);
+        height = new EditText(getApplicationContext());
 
         next = findViewById(R.id.buttonContinue);
 
@@ -38,9 +36,9 @@ public class UserInfoWeight extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Material design workaround
-                //weight.setText(weightLayoutInput.getEditableText().toString());
-                //height.setText(heightLayoutInput.getEditableText().toString());
+                //Reinstated previous ideology with new questions
+                weight.setText(weightLayout.getEditText().getText().toString());
+                height.setText(heightLayout.getEditText().getText().toString());
 
                 if (height.getText().length() == 0.0f || weight.getText().length() == 0.0f){
                     Toast toast = Toast.makeText(getApplicationContext(), "Please enter your Current Weight and Height", Toast.LENGTH_LONG);
@@ -48,8 +46,8 @@ public class UserInfoWeight extends AppCompatActivity {
                     return;
                 }
 
-                float heightFloat = Float.parseFloat(heightLayoutInput.getText().toString());
-                float weightFloat = Float.parseFloat(weightLayoutInput.getText().toString());
+                float heightFloat = Float.parseFloat(height.getText().toString());
+                float weightFloat = Float.parseFloat(weight.getText().toString());
 
                 if (weightFloat < 50.0f || weightFloat > 700.0f){
                     Toast toast = Toast.makeText(getApplicationContext(), "Please enter your real weight", Toast.LENGTH_LONG);
@@ -63,13 +61,19 @@ public class UserInfoWeight extends AppCompatActivity {
                     return;
                 }
 
+                if(height.getText().toString().equals("") || weight.getText().toString().equals("")){
+                    Toast toast = Toast.makeText(getApplicationContext(),"Please enter both your height and weight",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
 
-                SharedPreferences sharedPreferences = getSharedPreferences("sharedPref", MODE_PRIVATE);
-                sharedPreferences.edit().putString("userWeight", weightLayoutInput.getText().toString()).apply();
-                sharedPreferences.edit().putString("userHeight", heightLayoutInput.getText().toString()).apply();
-                sharedPreferences.edit().putBoolean("setupFinished", true).apply();
+                else{
+                    SharedPreferences sharedPreferences = getSharedPreferences("sharedPref", MODE_PRIVATE);
+                    sharedPreferences.edit().putString("userWeight", weight.getText().toString()).apply();
+                    sharedPreferences.edit().putString("userHeight", height.getText().toString()).apply();
+                    sharedPreferences.edit().putBoolean("setupFinished", true).apply();
 
-                openUserActivityLevel(v);
+                    openUserActivityLevel(v);
+                }
             }
         });
 
@@ -78,13 +82,14 @@ public class UserInfoWeight extends AppCompatActivity {
     protected void loadWeight() {
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPref",MODE_PRIVATE);
 
-        String tempWeight = sharedPreferences.getString("userWeight","");
-        if(tempWeight != null && !tempWeight.equals("")){
-            weightLayoutInput.setText(tempWeight);
+        //there only needs to be one temp its temporary
+        String temp = sharedPreferences.getString("userWeight","");
+        if(!temp.equals("")){
+            weightLayout.getEditText().setText(temp);
         }
-        String tempHeight = sharedPreferences.getString("userHeight","");
-        if(tempHeight != null && !tempHeight.equals("")){
-            heightLayoutInput.setText(tempHeight);
+        temp = sharedPreferences.getString("userHeight","");
+        if(!temp.equals("")){
+            heightLayout.getEditText().setText(temp);
         }
     }
 
