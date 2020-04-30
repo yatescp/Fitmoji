@@ -10,9 +10,11 @@ import androidx.annotation.NonNull;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class}, version = 1, exportSchema = false)
+@Database(entities = {User.class, Diet.class, Workout.class}, version = 1, exportSchema = false)
 abstract class FitmojiDataBase extends RoomDatabase{
     abstract UserDao userDao();
+    abstract DietDao dietDao();
+    abstract WorkoutDao workoutDao();
 
 
     private static volatile FitmojiDataBase INSTANCE;

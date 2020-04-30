@@ -28,4 +28,14 @@
     <string name="textActivityModerate">Moderate</string>
     <string name="textActivityActive">Active</string>
     <string name="textActivityVeryActive">Very Active</string>
+
+    <string name="textPushupPrevious">Yesterday\'s Push Ups: </string>
+    <string name="textPushupGoal">Today\'s Push Up Goal: </string>
+    <string name="textPushupToday">Today\'s Push Ups: </string>
+    <string name="textCrunchPrevious">Yesterday\'s Crunches: </string>
+    <string name="textCrunchGoal">Today\'s Crunch Goal: </string>
+    <string name="textCrunchToday">Today\'s Crunches: </string>
+    <string name="textPlankPrevious">Yesterday\'s Plank Time: </string>
+    <string name="textPlankGoal">Today\'s Plank Time Goal: </string>
+    <string name="textPlankToday">Today\'s Plank Time: </string>
 </resources>

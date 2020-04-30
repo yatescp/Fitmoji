@@ -8,10 +8,6 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "Workouts")
 
 public class Workout {
-    @NonNull
-    @PrimaryKey
-    @ColumnInfo(name = "name")
-    private String name;
 
     @NonNull
     @PrimaryKey
@@ -30,15 +26,12 @@ public class Workout {
     @ColumnInfo(name = "plank")
     private int plank;
 
-    public Workout(@NonNull String name, @NonNull int pushups, @NonNull int crunches, @NonNull int plank, @NonNull String date){
-        this.name = name;
+    public Workout(@NonNull int pushups, @NonNull int crunches, @NonNull int plank, @NonNull String date){
         this.date = date;
         this.crunches = crunches;
         this.pushups = pushups;
         this.plank = plank;
     }
-
-    @NonNull public String getName(){return name;}
 
     @NonNull public int getPushups(){return pushups;}
 
@@ -47,8 +40,6 @@ public class Workout {
     @NonNull public int getPlank(){return plank;}
 
     @NonNull public String getDate(){return date;}
-
-    public void setName(@NonNull String name){this.name = name;}
 
     public void setPushups(@NonNull int pushups){this.pushups = pushups;}
 
