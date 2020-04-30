@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         //pull these values from the database
         maxWeight = 210; //starting weight from database/user preferences
-        minWeight = 170; //goal weight from database/user preferences
+        minWeight = 180; //goal weight from database/user preferences
         maxPushup = 50; //based on intensity level from user preferences
         minPushup = 0;
         maxCrunch = 50; //based on intensity level from user preferences
@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
         //Hardcoded data, pull this form the database instead
         weightData = new DataPoint[] {
-                new DataPoint(1, 15),
-                new DataPoint(2, 16),
-                new DataPoint(3, 18),
-                new DataPoint(4, 20),
-                new DataPoint(5, 21)
+                new DataPoint(1, 200),
+                new DataPoint(2, 198),
+                new DataPoint(3, 197),
+                new DataPoint(4, 195),
+                new DataPoint(5, 196)
         };
 
         pushupData = new DataPoint[] {
@@ -151,22 +151,22 @@ public class MainActivity extends AppCompatActivity {
         LineGraphSeries<DataPoint> proteinSeries = new LineGraphSeries<DataPoint>(proteinData);
         proteinGraph.addSeries(proteinSeries);
         proteinGraph.getViewport().setYAxisBoundsManual(true);
-        proteinGraph.getViewport().setMaxY(maxPlank);
-        proteinGraph.getViewport().setMinY(minPlank);
+        proteinGraph.getViewport().setMaxY(maxProtein);
+        proteinGraph.getViewport().setMinY(0);
         proteinGraph.setTitle("Daily Protein Intake");
 
         LineGraphSeries<DataPoint> carbSeries = new LineGraphSeries<DataPoint>(carbData);
         carbGraph.addSeries(carbSeries);
         carbGraph.getViewport().setYAxisBoundsManual(true);
-        carbGraph.getViewport().setMaxY(maxPlank);
-        carbGraph.getViewport().setMinY(minPlank);
+        carbGraph.getViewport().setMaxY(maxCarbs);
+        carbGraph.getViewport().setMinY(0);
         carbGraph.setTitle("Daily Carb Intake");
 
         LineGraphSeries<DataPoint> fatSeries = new LineGraphSeries<DataPoint>(fatData);
         fatGraph.addSeries(fatSeries);
         fatGraph.getViewport().setYAxisBoundsManual(true);
-        fatGraph.getViewport().setMaxY(maxPlank);
-        fatGraph.getViewport().setMinY(minPlank);
+        fatGraph.getViewport().setMaxY(maxFats);
+        fatGraph.getViewport().setMinY(0);
         fatGraph.setTitle("Daily Fat Intake");
     }
 }
