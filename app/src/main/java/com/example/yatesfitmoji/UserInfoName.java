@@ -49,14 +49,14 @@ public class UserInfoName extends AppCompatActivity {
         maleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sex =1;
+                sex = 1;
             }
         });
 
         femaleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sex =0;
+                sex = 0;
             }
         });
 

@@ -80,8 +80,7 @@ public class UserInfoWeight extends AppCompatActivity {
     }
 
     protected void loadWeight() {
-        SharedPreferences sharedPreferences = getSharedPreferences("sharedPref",MODE_PRIVATE);
-
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedPref", MODE_PRIVATE);
         //there only needs to be one temp its temporary
         String temp = sharedPreferences.getString("userWeight","");
         if(!temp.equals("")){

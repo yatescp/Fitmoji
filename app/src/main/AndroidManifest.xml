@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".UserInfoName" />
+        <activity android:name=".UserDailyCalories" />
         <activity android:name=".UserActivityLevel" />
+
         <activity android:name=".MainActivity" />
     </application>
 

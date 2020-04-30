@@ -36,14 +36,14 @@ tools:context=".WelcomeScreen">
         app:layout_constraintTop_toBottomOf="@+id/reasonTextLabel">
 
         <RadioButton
-            android:id="@+id/radioButtonWeightGain"
+            android:id="@+id/radioButtonWeightLoss"
             android:layout_width="137dp"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="@string/textWeightLoss" />
 
         <RadioButton
-            android:id="@+id/radioButtonWeightLoss"
+            android:id="@+id/radioButtonWeightGain"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"

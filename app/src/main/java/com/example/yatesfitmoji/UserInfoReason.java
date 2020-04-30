@@ -26,21 +26,21 @@ public class UserInfoReason extends AppCompatActivity {
         gain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveReason("gain");
+                saveReason("gain weight");
                 openUserWeight(v);
             }
         });
         lose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveReason("lose");
+                saveReason("lose weight");
                 openUserWeight(v);
             }
         });
         stay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveReason("stay");
+                saveReason("stay in shape");
                 openUserWeight(v);
             }
         });
