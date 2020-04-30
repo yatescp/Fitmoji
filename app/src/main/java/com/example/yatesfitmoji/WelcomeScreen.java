@@ -38,7 +38,8 @@ public class WelcomeScreen extends AppCompatActivity {
             public void onClick(View v) {
                 //Bypasses user setup if the account has already been setup
                 if (sharedPreferences.getBoolean("setupFinished", false)) openMainActivity(v);
-                else openUserInfoName(v);
+                else
+                    openUserInfoName(v);
             }
         });
     }
