@@ -22,7 +22,7 @@ public class UserActivityLevel extends AppCompatActivity {
         moderate = findViewById(R.id.radioButtonModerate);
         active = findViewById(R.id.radioButtonActive);
         veryActive = findViewById(R.id.radioButtonVeryActive);
-        
+
         light.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
