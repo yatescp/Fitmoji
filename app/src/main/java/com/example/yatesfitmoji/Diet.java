@@ -10,11 +10,6 @@ import androidx.room.PrimaryKey;
 public class Diet {
     @PrimaryKey
     @NonNull
-    @ColumnInfo(name = "name")
-    private String name;
-
-    @PrimaryKey
-    @NonNull
     @ColumnInfo(name = "date")
     private String date;
 
@@ -30,15 +25,12 @@ public class Diet {
     @ColumnInfo(name = "fat")
     private int fat;
 
-    public Diet(@NonNull String name, @NonNull String date, @NonNull int carbs, @NonNull int protein, @NonNull int fat){
-        this.name = name;
+    public Diet(@NonNull String date, @NonNull int carbs, @NonNull int protein, @NonNull int fat){
         this.date = date;
         this.carbs = carbs;
         this.protein = protein;
         this.fat = fat;
     }
-
-    @NonNull public String getName(){return name;}
 
     @NonNull public String getDate(){return date;}
 
@@ -47,8 +39,6 @@ public class Diet {
     @NonNull public int getProtein(){return protein;}
 
     @NonNull public int getFat(){return fat;}
-
-    public void setName(@NonNull String name){this.name = name;}
 
     public void setCarbs(@NonNull int carbs){this.carbs = carbs;}
 

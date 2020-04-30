@@ -14,17 +14,17 @@ public interface DietDao {
     @Query("SELECT * FROM Diets")
     LiveData<List<Diet>> getAllDiets();
 
-    @Query("SELECT * FROM Diets WHERE name = :nameKey LIMIT 1")
-    LiveData<Diet> getDiet(String nameKey);
+    @Query("SELECT * FROM Diets WHERE date = :dateKey LIMIT 1")
+    LiveData<Diet> getDietByDate(String dateKey);
 
-    @Query("SELECT carbs FROM Diets WHERE name = :nameKey LIMIT 1")
-    LiveData<Diet> getCarbs(String nameKey);
+    @Query("SELECT carbs FROM Diets WHERE date = :dateKey LIMIT 1")
+    LiveData<Integer> getCarbs(String dateKey);
 
-    @Query("SELECT protein FROM Diets WHERE name = :nameKey LIMIT 1")
-    LiveData<Diet> getPrptein(String nameKey);
+    @Query("SELECT protein FROM Diets WHERE date = :dateKey LIMIT 1")
+    LiveData<Integer> getProtein(String dateKey);
 
-    @Query("SELECT fat FROM Diets WHERE name = :nameKey LIMIT 1")
-    LiveData<Diet> getFat(String nameKey);
+    @Query("SELECT fat FROM Diets WHERE date = :dateKey LIMIT 1")
+    LiveData<Integer> getFat(String dateKey);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Diet diet);
