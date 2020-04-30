@@ -12,7 +12,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 public class MainActivity extends AppCompatActivity {
 
-    GraphView graph;
+    GraphView weightGraph;
+    GraphView pushupGraph;
+    GraphView crunchesGraph;
+    GraphView plankGraph;
+
+    int maxWeight, minWeight, maxPushup, minPushup, maxCrunch, minCrunch, maxPlank, minPlank;
 
     private User mUser;
 
@@ -34,20 +39,75 @@ public class MainActivity extends AppCompatActivity {
         //model.insertUser(mUser);
 
 
-        graph = findViewById(R.id.weightGraph);
+        //pull these values from the database
+        maxWeight = 210; //starting weight from database/user preferences
+        minWeight = 170; //goal weight from database/user preferences
+        maxPushup = 50; //based on intensity level from user preferences
+        minPushup = 0;
+        maxCrunch = 50; //based on intensity level from user preferences
+        minCrunch = 0;
+        maxPlank = 120; //based on intensity level from user preferences
+        minPlank = 0;
 
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
+
+
+        weightGraph = findViewById(R.id.weightGraph);
+        pushupGraph = findViewById(R.id.PushupsGraph);
+        crunchesGraph = findViewById(R.id.cruchesGraph);
+        plankGraph = findViewById(R.id.PlankTimeGraph);
+
+        //Each DataPoint is a day, x is day from start, y is weight on that day
+        LineGraphSeries<DataPoint> weightSeries = new LineGraphSeries<DataPoint>(new DataPoint[] {
                 new DataPoint(1, 200),
                 new DataPoint(2, 197),
                 new DataPoint(3, 194),
                 new DataPoint(4, 193),
                 new DataPoint(5, 191)
         });
-        graph.addSeries(series);
-        graph.getViewport().setYAxisBoundsManual(true);
-        graph.getViewport().setMaxY(210);
-        graph.getViewport().setMinY(170);
+        weightGraph.addSeries(weightSeries);
+        weightGraph.getViewport().setYAxisBoundsManual(true);
+        weightGraph.getViewport().setMaxY(maxWeight);
+        weightGraph.getViewport().setMinY(minWeight);
+        weightGraph.setTitle("Weight Progress");
 
-        graph.setTitle("Weight Progress");
+
+        LineGraphSeries<DataPoint> pushupSeries = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(1, 15),
+                new DataPoint(2, 16),
+                new DataPoint(3, 18),
+                new DataPoint(4, 20),
+                new DataPoint(5, 21)
+        });
+        pushupGraph.addSeries(pushupSeries);
+        pushupGraph.getViewport().setYAxisBoundsManual(true);
+        pushupGraph.getViewport().setMaxY(maxPushup);
+        pushupGraph.getViewport().setMinY(minPushup);
+        pushupGraph.setTitle("Daily Push Up Progress");
+
+        LineGraphSeries<DataPoint> crunchSeries = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(1, 25),
+                new DataPoint(2, 28),
+                new DataPoint(3, 30),
+                new DataPoint(4, 32),
+                new DataPoint(5, 33)
+        });
+        crunchesGraph.addSeries(crunchSeries);
+        crunchesGraph.getViewport().setYAxisBoundsManual(true);
+        crunchesGraph.getViewport().setMaxY(maxCrunch);
+        crunchesGraph.getViewport().setMinY(minCrunch);
+        crunchesGraph.setTitle("Daily Crunches Progress");
+
+        LineGraphSeries<DataPoint> plankSeries = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(1, 30),
+                new DataPoint(2, 36),
+                new DataPoint(3, 38),
+                new DataPoint(4, 43),
+                new DataPoint(5, 47)
+        });
+        plankGraph.addSeries(plankSeries);
+        plankGraph.getViewport().setYAxisBoundsManual(true);
+        plankGraph.getViewport().setMaxY(maxPlank);
+        plankGraph.getViewport().setMinY(minPlank);
+        plankGraph.setTitle("Daily Plank Time Progress");
     }
 }
