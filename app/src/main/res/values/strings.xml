@@ -38,4 +38,14 @@
     <string name="textPlankPrevious">Yesterday\'s Plank Time: </string>
     <string name="textPlankGoal">Today\'s Plank Time Goal: </string>
     <string name="textPlankToday">Today\'s Plank Time: </string>
+
+    <string name="textProteinYesterday">Yesterday\'s Protein: </string>
+    <string name="textProteinGoal">Today\'s Protein Goal: </string>
+    <string name="textProteinToday">Today\'s Protein: </string>
+    <string name="textCarbs">Yesterday\'s Carbs: </string>
+    <string name="textCarbsGoal">Today\'s Carb Goal: </string>
+    <string name="textCarbsToday">Today\'s Carbs: </string>
+    <string name="textFatsPrevious">Yesterday\'s Fats: </string>
+    <string name="textFatsGoal">Today\'s Fat Goal: </string>
+    <string name="textFatsToday">Today\'s Fats: </string>
 </resources>

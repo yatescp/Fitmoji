@@ -6,256 +6,504 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="65dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
 
-            <com.jjoe64.graphview.GraphView
-                android:id="@+id/weightGraph"
-                android:layout_width="410dip"
-                android:layout_height="200dip" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/weightGraph"
+                    android:layout_width="410dip"
+                    android:layout_height="200dip" />
 
-            <com.jjoe64.graphview.GraphView
-                android:id="@+id/PushupsGraph"
-                android:layout_width="410dip"
-                android:layout_height="200dip"
-                android:layout_weight="1" />
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <com.jjoe64.graphview.GraphView
-                android:id="@+id/cruchesGraph"
-                android:layout_width="410dip"
-                android:layout_height="200dip"
-                android:layout_weight="1" />
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <com.jjoe64.graphview.GraphView
-                android:id="@+id/PlankTimeGraph"
-                android:layout_width="410dip"
-                android:layout_height="200dip"
-                android:layout_weight="1" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
-        tools:layout_editor_absoluteX="-36dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" >
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="410dp"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/pushupPreviousText"
-                    android:layout_width="wrap_content"
+                <Space
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/textPushupPrevious"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:layout_editor_absoluteX="37dp" />
+                    android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/pushupPrevious"
-                    android:layout_width="wrap_content"
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/PushupsGraph"
+                    android:layout_width="410dip"
+                    android:layout_height="200dip"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="24dp"
-                    android:text="0"
-                    app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/pushupGoalText"
-                    android:layout_width="wrap_content"
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/crunchesGraph"
+                    android:layout_width="410dip"
+                    android:layout_height="200dip"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/textPushupGoal"
-                    app:layout_constraintTop_toBottomOf="@+id/pushupPreviousText"
-                    tools:layout_editor_absoluteX="36dp" />
+                    android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/pushupPrevious2"
-                    android:layout_width="wrap_content"
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/PlankTimeGraph"
+                    android:layout_width="410dip"
+                    android:layout_height="200dip"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="8dp"
-                    android:text="0"
-                    app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
-                    app:layout_constraintTop_toBottomOf="@+id/pushupPrevious" />
+                    android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/pushupGoalText2"
-                    android:layout_width="wrap_content"
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/proteinGraph"
+                    android:layout_width="410dip"
+                    android:layout_height="200dip"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/textPushupToday"
-                    app:layout_constraintTop_toBottomOf="@+id/pushupGoalText"
-                    tools:layout_editor_absoluteX="35dp" />
+                    android:layout_weight="1" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textInputPushups"
-                    android:layout_width="64dp"
-                    android:layout_height="36dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:maxLength="26"
-                    android:singleLine="true"
-                    app:layout_constraintStart_toEndOf="@+id/pushupGoalText2"
-                    tools:layout_editor_absoluteY="70dp" />
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/carbsGraph"
+                    android:layout_width="410dip"
+                    android:layout_height="200dip"
+                    android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/crunchesPreviousText"
-                    android:layout_width="wrap_content"
+                <Space
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:text="@string/textCrunchPrevious"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputPushups"
-                    tools:layout_editor_absoluteX="36dp" />
+                    android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/crunchesPrevious"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="32dp"
-                    android:text="0"
-                    app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputPushups" />
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/fatsGraph"
+                    android:layout_width="410dip"
+                    android:layout_height="200dip"
+                    android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/crunchesGoalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/textCrunchGoal"
-                    app:layout_constraintTop_toBottomOf="@+id/crunchesPreviousText"
-                    tools:layout_editor_absoluteX="36dp" />
+            </LinearLayout>
+        </HorizontalScrollView>
 
-                <TextView
-                    android:id="@+id/crunchesGoal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="8dp"
-                    android:text="0"
-                    app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
-                    app:layout_constraintTop_toBottomOf="@+id/crunchesPrevious" />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp">
 
-                <TextView
-                    android:id="@+id/crunchesTodayText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/textCrunchToday"
-                    app:layout_constraintTop_toBottomOf="@+id/crunchesGoalText"
-                    tools:layout_editor_absoluteX="35dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textInputCrunches"
-                    android:layout_width="64dp"
-                    android:layout_height="36dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:maxLength="26"
-                    android:singleLine="true"
-                    app:layout_constraintStart_toEndOf="@+id/pushupGoalText2"
-                    tools:layout_editor_absoluteY="184dp" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="410dp"
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/plankPreviousText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:text="@string/textCrunchPrevious"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputCrunches"
-                    tools:layout_editor_absoluteX="35dp" />
+                    <TextView
+                        android:id="@+id/pushupPreviousText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/textPushupPrevious"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/plankPrevious"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="32dp"
-                    android:text="0 seconds"
-                    app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputCrunches" />
+                    <TextView
+                        android:id="@+id/pushupPrevious"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="32dp"
+                        android:text="0"
+                        app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/plankGoalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/textCrunchGoal"
-                    app:layout_constraintTop_toBottomOf="@+id/plankPreviousText"
-                    tools:layout_editor_absoluteX="35dp" />
+                    <TextView
+                        android:id="@+id/pushupGoalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textPushupGoal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pushupPreviousText" />
 
-                <TextView
-                    android:id="@+id/plankGoal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="0 seconds"
-                    app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
-                    app:layout_constraintTop_toBottomOf="@+id/plankPrevious" />
+                    <TextView
+                        android:id="@+id/pushupGoal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="8dp"
+                        android:text="0"
+                        app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
+                        app:layout_constraintTop_toBottomOf="@+id/pushupPrevious" />
 
-                <TextView
-                    android:id="@+id/plnakTodayText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/textCrunchToday"
-                    app:layout_constraintTop_toBottomOf="@+id/plankGoalText"
-                    tools:layout_editor_absoluteX="34dp" />
+                    <TextView
+                        android:id="@+id/pushupTodayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textPushupToday"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pushupGoalText" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textInputPlank"
-                    android:layout_width="64dp"
-                    android:layout_height="36dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:maxLength="26"
-                    android:singleLine="true"
-                    app:layout_constraintStart_toEndOf="@+id/pushupGoalText2"
-                    tools:layout_editor_absoluteY="298dp" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputPushups"
+                        android:layout_width="64dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:maxLength="26"
+                        android:singleLine="true"
+                        app:layout_constraintStart_toEndOf="@+id/pushupTodayText"
+                        app:layout_constraintTop_toBottomOf="@+id/pushupGoal" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/crunchesPreviousText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/textCrunchPrevious"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputPushups" />
 
-        </LinearLayout>
-    </HorizontalScrollView>
+                    <TextView
+                        android:id="@+id/crunchesPrevious"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="32dp"
+                        android:text="0"
+                        app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputPushups" />
+
+                    <TextView
+                        android:id="@+id/crunchesGoalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textCrunchGoal"
+                        app:layout_constraintTop_toBottomOf="@+id/crunchesPreviousText"
+                        tools:layout_editor_absoluteX="44dp" />
+
+                    <TextView
+                        android:id="@+id/crunchesGoal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="8dp"
+                        android:text="0"
+                        app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
+                        app:layout_constraintTop_toBottomOf="@+id/crunchesPrevious" />
+
+                    <TextView
+                        android:id="@+id/crunchesTodayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textCrunchToday"
+                        app:layout_constraintTop_toBottomOf="@+id/crunchesGoalText"
+                        tools:layout_editor_absoluteX="43dp" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputCrunches"
+                        android:layout_width="64dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:maxLength="26"
+                        android:singleLine="true"
+                        app:layout_constraintStart_toEndOf="@+id/pushupTodayText"
+                        app:layout_constraintTop_toBottomOf="@+id/crunchesGoalText" />
+
+                    <TextView
+                        android:id="@+id/plankPreviousText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/textCrunchPrevious"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputCrunches"
+                        tools:layout_editor_absoluteX="43dp" />
+
+                    <TextView
+                        android:id="@+id/plankPrevious"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="32dp"
+                        android:text="0 seconds"
+                        app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputCrunches" />
+
+                    <TextView
+                        android:id="@+id/plankGoalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textCrunchGoal"
+                        app:layout_constraintTop_toBottomOf="@+id/plankPreviousText"
+                        tools:layout_editor_absoluteX="43dp" />
+
+                    <TextView
+                        android:id="@+id/plankGoal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="8dp"
+                        android:text="0 seconds"
+                        app:layout_constraintStart_toEndOf="@+id/pushupPreviousText"
+                        app:layout_constraintTop_toBottomOf="@+id/plankPrevious" />
+
+                    <TextView
+                        android:id="@+id/plankTodayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textCrunchToday"
+                        app:layout_constraintTop_toBottomOf="@+id/plankGoalText"
+                        tools:layout_editor_absoluteX="42dp" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputPlank"
+                        android:layout_width="64dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:maxLength="26"
+                        android:singleLine="true"
+                        app:layout_constraintStart_toEndOf="@+id/pushupTodayText"
+                        app:layout_constraintTop_toBottomOf="@+id/plankGoalText" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="410dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/proteinPreviousText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/textProteinYesterday"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/proteinPrevious"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="32dp"
+                        android:text="0"
+                        app:layout_constraintStart_toEndOf="@+id/proteinPreviousText"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/proteinGoalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textProteinYesterday"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/proteinPreviousText" />
+
+                    <TextView
+                        android:id="@+id/protienGoal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="8dp"
+                        android:text="0"
+                        app:layout_constraintStart_toEndOf="@+id/proteinGoalText"
+                        app:layout_constraintTop_toBottomOf="@+id/proteinPrevious" />
+
+                    <TextView
+                        android:id="@+id/proteinTodayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textProteinToday"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/proteinGoalText" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputProtein"
+                        android:layout_width="64dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:maxLength="26"
+                        android:singleLine="true"
+                        app:layout_constraintStart_toEndOf="@+id/proteinTodayText"
+                        tools:layout_editor_absoluteY="78dp" />
+
+                    <TextView
+                        android:id="@+id/carbsPreviousText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/textCarbs"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputProtein" />
+
+                    <TextView
+                        android:id="@+id/carbsPrevious"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:text="0"
+                        app:layout_constraintStart_toEndOf="@+id/carbsPreviousText"
+                        tools:layout_editor_absoluteY="146dp" />
+
+                    <TextView
+                        android:id="@+id/carbsGoalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textCarbsGoal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/carbsPreviousText" />
+
+                    <TextView
+                        android:id="@+id/carbsGoal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:text="0"
+                        app:layout_constraintStart_toEndOf="@+id/carbsGoalText"
+                        tools:layout_editor_absoluteY="173dp" />
+
+                    <TextView
+                        android:id="@+id/carbsTodayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textCarbsToday"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/carbsGoalText" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputCarbs"
+                        android:layout_width="64dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:maxLength="26"
+                        android:singleLine="true"
+                        app:layout_constraintStart_toEndOf="@+id/carbsTodayText"
+                        tools:layout_editor_absoluteY="192dp" />
+
+                    <TextView
+                        android:id="@+id/fatsPreviousText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/textFatsPrevious"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputCarbs" />
+
+                    <TextView
+                        android:id="@+id/fatsPrevious"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="0 seconds"
+                        app:layout_constraintStart_toEndOf="@+id/fatsPreviousText"
+                        tools:layout_editor_absoluteY="260dp" />
+
+                    <TextView
+                        android:id="@+id/fatsGoalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textFatsGoal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fatsPreviousText" />
+
+                    <TextView
+                        android:id="@+id/fatsGoal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="0 seconds"
+                        app:layout_constraintStart_toEndOf="@+id/fatsGoalText"
+                        tools:layout_editor_absoluteY="287dp" />
+
+                    <TextView
+                        android:id="@+id/fatsTodayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="42dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/textFatsToday"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fatsGoalText" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputFats"
+                        android:layout_width="64dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:maxLength="26"
+                        android:singleLine="true"
+                        app:layout_constraintStart_toEndOf="@+id/fatsTodayText"
+                        tools:layout_editor_absoluteY="306dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
